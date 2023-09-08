@@ -1,0 +1,22 @@
+
+header{
+    background-image: url(../img/header.JPG);
+    overflow: hidden;
+    height: 10vh;
+    color: chartreuse;
+
+}
+
+body{
+
+    background-image: url(../img/back_login.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    background-size: cover;
+    background-position: fixed;
+
+}
+h4{
+    background-color: aliceblue;
+}
