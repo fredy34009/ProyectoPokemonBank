@@ -10,34 +10,20 @@
 </head>
 
 <body>
-    <header>
-        <center>
-            <h1>POKEMON BANK</h1>
-        </center>
-    </header>
     <div class="container">
-        <div class="row">
-            <div class="col-4">
-            </div>
-            <div class="col-4">
-                <div class="login">
-                    <form>
-                        <div class="form-group">
-                            <label for="usuario">Usuario</label>
-                            <input type="usuario" id="usuario" class="form-control" placeholder="Ingrese usuario">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Contraseña">
-                        </div>
-                        <button type="submit" class="btn btn-success">Ingresar</button>
-                    </form>
+            <div class="login">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="dashboard.html">
+                            <div class="form-group">
+                                <label for="password">Ingresar Pin de 4 digitos</label>
+                                <input type="password" class="form-control" id="pin" placeholder="Ingresar pin">
+                            </div>
+                            <button type="submit" class="btn btn-success center">Ingresar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-             <div class="col-4">
-            </div>
         </div>
-    </div>
-    <a href="transacciones.html">Transacciones</a>
     <script src="scripts/bootstrap.js"></script>
 </body></html>
