@@ -67,27 +67,21 @@
             <div id="contenido">
                 <div id="depositar">
                     <form action="" class="card">
-                    <label for="">Saldo de Cuenta Origen</label>
-                    <input type="text" name="Cantidad1" id="C1" value="1200">
-                    <label for="">Saldo de Cuenta Destino</label>
-                    <input type="text" name="Cantidad2" id="C2" value="500">
-                    
-                        <h2>Transferencias</h2>
-                        <input type="text"  name="" id="Cant" placeholder="Cantidad">
-                         <hr>
-                         <input type="button" value="Transferencia de Cuenta 1 y 2" id="bt2" onclick="">
-                         <input type="button" value="Transferencia de Cuenta 2 y 1" id="bt3" onclick="">
+                        <label for="c1">Saldo de Cuenta Origen</label>
+                        <input type="text" class="form-control" name="Cantidad1" id="c1" value="500" disabled>
+                        <label for="">Saldo a depositar</label>
+                        <input type="text" class="form-control" name="Cantidad2" id="C2" value="200">
+                        <input type="button" class="btn btn-success" value="Depositar" id="bt2" onclick="">
                     </form>
                 </div>
                 <div id="retirar">
                     <form action="" class="card">
-                    <label for="">Saldo de Cuenta</label>
-                    <input type="text" name="Cantidad2" id="C2" value="500">
-                    
-                        <h2>Retirar</h2>
-                        <input type="text"  name="" id="Cant" placeholder="Cantidad">
-                         <hr>
-                         <input type="button" value="Depositar a Cuenta" id="bt7" onclick="">
+                        <label for="saldo">Saldo de Cuenta</label>
+                        <input type="text" class="form-control" name="saldo" id="saldo" value="500" disabled>
+                        <h2>Cantidad a Retirar</h2>
+                        <input type="text" class="form-control" name="" id="Cant" placeholder="Cantidad">
+                        <hr>
+                        <input type="button" class="btn btn-success" value="Retirar" id="bt7" onclick="">
                     </form>
                 </div>
                 <div id="consultar">

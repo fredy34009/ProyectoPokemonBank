@@ -49,6 +49,7 @@ i {
     width: 100%;
     align-items: stretch;
 }
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
@@ -169,6 +170,7 @@ body {
     height: auto;
     background-size: auto;
     background-position: fixed;
+    position: fixed;
 }
 
 div#contenido {
@@ -187,20 +189,24 @@ div#servicios {
     overflow: auto;
     width: 100%;
 }
-.texto
-{
+
+.texto {
     background-color: white;
     padding: 1%;
+    margin: 1%;
     border-radius: 20px;
+    width: 75%;
+    position: fixed;
 }
+
 .card {
     border: 1px solid #ccc;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: #f4eeee;
     text-align: center;
-    max-width: 300px;
-    max-height: 100%;
+    align-content: center;
+    justify-content: center;
     margin: 0 auto;
 }
 
@@ -209,6 +215,7 @@ div#servicios {
     height: 100px;
     border-radius: 1%;
 }
+
 .card .btn {
     display: block;
     width: 100%;
@@ -219,8 +226,9 @@ div#servicios {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-  }
-  .card .btn:hover {
+}
+
+.card .btn:hover {
     color: rgb(59, 243, 39);
     border: 3px solid rgb(10, 246, 21);
     font-weight: bold;
