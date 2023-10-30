@@ -188,6 +188,7 @@ div#servicios {
     height: 100%;
     overflow: auto;
     width: 100%;
+    padding-bottom: 12%;
 }
 
 .texto {
@@ -211,8 +212,8 @@ div#servicios {
 }
 
 .card-img-top {
-    max-width: 100px;
-    height: 100px;
+    max-width: 60px;
+    height: 60px;
     border-radius: 1%;
 }
 
@@ -235,18 +236,19 @@ div#servicios {
     background-color: transparent;
     transition: all 3.s;
 }
+
 .contenedor {
-  background: #EEE;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100%;
+    background: #EEE;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
 }
 
 .elemento {
- position: fixed;
-top: 50%;
-left: 50%;
--webkit-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }

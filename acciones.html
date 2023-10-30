@@ -14,7 +14,7 @@
         <button id="sidebarCollapse" class="btn navbar-btn">
             <i class="fas fa-lg fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="dashboard.html">
             <h3 id="logo">PokemonBank</h3>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
     <div class="wrapper fixed-left">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><i class="fas fa-user"></i>Ash Ketchum</h3>
+                <h3><i class="fas fa-user" id="account"></i></h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -67,110 +67,111 @@
             <div id="contenido">
                 <div class="centrar" id="depositar">
                     <form action="" class="card">
-                        <label for="c1">Saldo de Cuenta Origen</label>
-                        <input type="text" class="form-control" name="Cantidad1" id="c1" value="500" disabled>
-                        <label for="">Saldo a depositar</label>
-                        <input type="text" class="form-control" name="Cantidad2" id="C2" value="200">
-                        <input type="button" class="btn btn-success" value="Depositar" id="bt2" onclick="">
+                        <label for="Cantidad1">Saldo de Cuenta Origen</label>
+                        <input type="text" class="form-control" name="Cantidad1" id="cantidad1" disabled>
+                        <label for="Cantidad2">Saldo a depositar</label>
+                        <input type="text" class="form-control" name="Cantidad2" id="cantidad2" placeholder="Cantidad">
+                        <hr>
+                        <input type="button" class="btn btn-success" value="Depositar" id="bt2" onclick="dialogo(2)">
                     </form>
                 </div>
                 <div class="centrar" id="retirar">
                     <form action="" class="card">
                         <label for="saldo">Saldo de Cuenta</label>
-                        <input type="text" class="form-control" name="saldo" id="saldo" value="500" disabled>
+                        <input type="text" class="form-control" name="cantidad" id="cantidad" disabled>
                         <h2>Cantidad a Retirar</h2>
-                        <input type="text" class="form-control" name="" id="Cant" placeholder="Cantidad">
+                        <input type="text" class="form-control" name="cantidad3" id="cantidad3" placeholder="Cantidad">
                         <hr>
-                        <input type="button" class="btn btn-success" value="Retirar" id="bt7" onclick="">
+                        <input type="button" class="btn btn-success" value="Retirar" id="bt7" onclick="dialogo(3)">
                     </form>
                 </div>
                 <div class="centrar" id="consultar">
                     <div class="card">
                         <div class="row">
                             <div class="col">
-                                <h1># de Cuenta: 0987654321</h1>
+                                <h1 id="cuenta"></h1>
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-                                <h2>Nombre: Ash Ketchum</h2>
+                                <h2 id="nombre"></h2>
                             </div>
                         </div>
                         <div class="row">
                             <br>
                             <div class="col">
-                                <h2>Saldo actual: $500.00</h2>
+                                <h2 id="saldo"></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="servicios">
+                <div id="servicios" class="col-12">
                     <div class="card-columns">
                         <div class="card">
                             <img class="card-img-top" src="img/Anda.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(1)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/Aes.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(2)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/DelSur.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(3)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/claro.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(4)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/Digicel.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(5)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/movistar.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(6)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/Tigo.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(7)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/udb.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(8)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/ufg.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(9)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/GrupoQ.png" alt="Card image cap">
                             <div class="card-body">
-                                <button class="btn">Pagar</button>
+                                <button class="btn" onclick="servicio(10)">Pagar</button>
                             </div>
                         </div>
                         <div class="card">
                             <img class="card-img-top" src="img/Yamaha.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <button class="btn">Pagar</button>
+                            <div class="card-body" >
+                                <button class="btn" onclick="servicio(11)">Pagar</button>
                             </div>
                         </div>
                     </div>
@@ -184,4 +185,9 @@
     <script src="js/bootstrap_4.4.1.min.js"></script>
     <script src="js/icons.js"></script>
     <script src="js/script.js"></script>
-</body></html>
+    <script src="js/usuario.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/jspdf.umd.min.js"></script>
+</body>
+
+</html>

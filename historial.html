@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>PokemonBank</title>
+    <title>Historial</title>
 </head>
 
-<body>
+<body onload="pintar()">
     <nav class="navbar navbar-expand-lg navbar-light blue fixed-top">
         <button id="sidebarCollapse" class="btn navbar-btn">
             <i class="fas fa-lg fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="dashboard.html">
             <h3 id="logo">PokemonBank</h3>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
     <div class="wrapper fixed-left">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><i class="fas fa-user"></i>Ash Ketchum</h3>
+                <h3><i class="fas fa-user" id="account"></i></h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -66,18 +66,22 @@
         <div id="content">
             <div id="contenido">
                 <div id="depositar">
-                    <div class="texto">
+                    <h3 id="mensaje" ></h3>
+                    <div id="texto" class="texto">
                         <h4>Historial de Transacciones</h4>
                         <form class="form">
                             <label>Buscar por:</label>
-                            <select class="form-control">
-                                <option>Monto</option>
-                                <option>Tipo</option>
+                            <select id="buscar" name="buscar" class="buscar form-control">
+                                <option disabled selected>Seleccione</option>
+                                <option value="1">Deposito</option>
+                                <option value="2">Retiro</option>
+                                <option value="3">Servicio</option>
+                                <option value="4">Todo</option>
                             </select>
                         </form>
 
                         <br />
-                        <table class="table table-striped table-dark">
+                        <table class="table table-striped table-bordered table-sm table-dark" id="tabla">
                             <thead>
                                 <tr>
                                     <th scope="col"># Transaccion</th>
@@ -85,22 +89,7 @@
                                     <th scope="col">Monto</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Retiro</td>
-                                    <td>250.00</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Pago Servicos</td>
-                                    <td>30.00</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Consulta de saldo</td>
-                                    <td>500</td>
-                                </tr>
+                            <tbody id="data">
                             </tbody>
                         </table>
                     </div>
@@ -113,4 +102,78 @@
     <script src="js/bootstrap_4.4.1.min.js"></script>
     <script src="js/icons.js"></script>
     <script src="js/script.js"></script>
-</body></html>
+    <script src="js/usuario.js"></script>
+    <script>
+        const selectElement = document.querySelector(".buscar");
+        selectElement.addEventListener("change", (event) => {
+            if (localStorage.getItem("transacciones") != null) {
+                let valores = JSON.parse(localStorage.getItem("transacciones"));
+                let buscar = document.getElementById('buscar');
+                const element = document.getElementById("data");
+                while (element.firstChild) {
+                    element.removeChild(element.firstChild);
+                }
+                //if(sel.options[sel.selectedIndex].text === 'empresa'){
+                switch (parseInt(buscar.options[buscar.selectedIndex].value)) {
+                    case 1:
+                        for (let i = 0; i < valores.length; i++) {
+                            if (valores[i].Transaccion == "Deposito") {
+                                buscarDatos(i, valores[i].Transaccion, valores[i].cantidad);
+                            }
+
+                        }
+                        break;
+                    case 2:
+                        for (let i = 0; i < valores.length; i++) {
+                            if (valores[i].Transaccion == "Retiro") {
+                                buscarDatos(i, valores[i].Transaccion, valores[i].cantidad);
+                            }
+
+                        }
+                        break;
+                    case 3:
+                        for (let i = 0; i < valores.length; i++) {
+                            if (valores[i].Transaccion != "Deposito" && valores[i].Transaccion != "Retiro") {
+                                buscarDatos(i, valores[i].Transaccion, valores[i].cantidad);
+                            }
+
+                        }
+                        break;
+                    case 4:
+                        for (let i = 0; i < valores.length; i++) {
+                            buscarDatos(i, valores[i].Transaccion, valores[i].cantidad);
+                        }
+                        break;
+                }
+            }
+            else
+                {
+                    document.getElementById("mensaje").innerHTML="No hay Registros Realiza Transacciones";
+                    document.getElementById("mensaje").classList=" alert alert-danger";
+                    document.getElementById("texto").style.display ='none';
+                   
+                }
+
+        });
+
+        function buscarDatos(id, transaccion, cantidad) {
+            let columna = document.createElement("tr");
+            let celda0 = document.createElement("td");
+            let hilera0 = document.createTextNode(id + 1);
+            let celda = document.createElement("td");
+            let hilera = document.createTextNode(transaccion);
+            let celda2 = document.createElement("td");
+            let hilera2 = document.createTextNode("$ "+cantidad);
+            celda0.appendChild(hilera0);
+            celda.appendChild(hilera);
+            celda2.appendChild(hilera2);
+            columna.appendChild(celda0);
+            columna.appendChild(celda);
+            columna.appendChild(celda2);
+            document.getElementById("data").appendChild(columna);
+        }
+
+    </script>
+</body>
+
+</html>

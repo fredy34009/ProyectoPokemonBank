@@ -14,7 +14,7 @@
         <button id="sidebarCollapse" class="btn navbar-btn">
             <i class="fas fa-lg fa-bars"></i>
         </button>
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="dashboard.html">
             <h3 id="logo">PokemonBank</h3>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
     <div class="wrapper fixed-left">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><i class="fas fa-user"></i>Ash Ketchum</h3>
+                <h3><i class="fas fa-user" id="account"></i></h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -64,23 +64,23 @@
         </nav>
         <div id="content">
             <div class="contenido">
-                <div class="centrar" id="consultar">
-                    <div class="card ">
+                <div id="consultar">
+                    <div class="card">
                         <div class="row">
                             <div class="col">
-                                <h1># de Cuenta: 0987654321</h1>
+                                <h1 id="cuenta"></h1>
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col">
-                                <h2>Nombre: Ash Ketchum</h2>
+                                <h2 id="nombre"></h2>
                             </div>
                         </div>
                         <div class="row">
                             <br>
                             <div class="col">
-                                <h2>Saldo actual: $500.00</h2>
+                                <h2 id="saldo"></h2>
                             </div>
                         </div>
                     </div>
@@ -93,4 +93,5 @@
     <script src="js/bootstrap_4.4.1.min.js"></script>
     <script src="js/icons.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/usuario.js"></script>
 </body></html>
