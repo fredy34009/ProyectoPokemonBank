@@ -66,7 +66,7 @@
         <div id="content">
             <div id="contenido">
                 <div id="depositar">
-                    <h3 id="mensaje" ></h3>
+                    <h3 id="mensaje"></h3>
                     <div id="texto" class="texto">
                         <h4>Historial de Transacciones</h4>
                         <form class="form">
@@ -145,14 +145,12 @@
                         }
                         break;
                 }
+            } else {
+                document.getElementById("mensaje").innerHTML = "No hay Registros Realiza Transacciones";
+                document.getElementById("mensaje").classList = " alert alert-danger";
+                document.getElementById("texto").style.display = 'none';
+
             }
-            else
-                {
-                    document.getElementById("mensaje").innerHTML="No hay Registros Realiza Transacciones";
-                    document.getElementById("mensaje").classList=" alert alert-danger";
-                    document.getElementById("texto").style.display ='none';
-                   
-                }
 
         });
 
@@ -163,7 +161,7 @@
             let celda = document.createElement("td");
             let hilera = document.createTextNode(transaccion);
             let celda2 = document.createElement("td");
-            let hilera2 = document.createTextNode("$ "+cantidad);
+            let hilera2 = document.createTextNode("$ " + cantidad);
             celda0.appendChild(hilera0);
             celda.appendChild(hilera);
             celda2.appendChild(hilera2);
